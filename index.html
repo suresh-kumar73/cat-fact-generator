@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+        #catFact {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            background-color: #5c9ead;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45777f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐱 Random Cat Fact Generator</h1>
+        <div id="catFact">Click the button to get a cat fact!</div>
+        <button onclick="generateCatFact()">Get Cat Fact</button>
+    </div>
+
+    <script>
+        const catFacts = [
+            "Cats have over 20 different vocalizations, including the famous meow.",
+            "A group of cats is called a 'clowder'.",
+            "Cats spend 70% of their life sleeping.",
+            "The first cat in space was a French cat named Felicette in 1963.",
+            "Cats have unique nose prints, just like human fingerprints.",
+            "A cat's hearing is much more sensitive than a human's and even most dogs.",
+            "Cats can jump up to 6 times their length in a single bound.",
+            "The oldest known pet cat was found in a 9,500-year-old grave in Cyprus.",
+            "Cats have three eyelids.",
+            "A cat's brain is 90% similar to a human's brain — more similar than it is to a dog's brain."
+        ];
+
+        function generateCatFact() {
+            const factElement = document.getElementById('catFact');
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            factElement.textContent = catFacts[randomIndex];
+        }
+    </script>
+</body>
+</html>
